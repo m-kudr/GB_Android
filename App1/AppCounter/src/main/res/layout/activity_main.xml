@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="16dp"
+        android:padding="28dp"
+        android:text="СБРОС"
+        android:textSize="30dp"
+        android:visibility="invisible"
+        app:backgroundTint="#009688" />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center"
+        android:text="Все места свободны"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#009688"
+        android:textSize="30dp"
+        app:fontFamily="sans-serif-black" />
+
+    <TextView
+        android:id="@+id/count"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="16dp"
+        android:text="0"
+        app:autoSizeTextType="uniform"
+        app:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_plus"
+        app:layout_constraintStart_toEndOf="@+id/button_minus" />
+
+    <ImageButton
+        android:id="@+id/button_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="22dp"
+        android:padding="28dp"
+        android:src="@drawable/exposure_plus"
+        app:backgroundTint="#009688" />
+
+    <ImageButton
+        android:id="@+id/button_minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|bottom"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="22dp"
+        android:padding="28dp"
+        android:src="@drawable/exposure_neg"
+        app:backgroundTint="#009688" />
+
+</FrameLayout>
