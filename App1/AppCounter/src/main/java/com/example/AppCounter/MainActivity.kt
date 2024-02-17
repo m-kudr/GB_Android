@@ -42,18 +42,15 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonPlus.setOnClickListener {
             if (currentNumber < maxNumber) {
-                currentNumber++
-                checkCount(currentNumber)
+                checkCount(++currentNumber)
                 if (currentNumber == maxNumber)
                     binding.buttonReset.visibility = View.VISIBLE
             }
         }
 
         binding.buttonMinus.setOnClickListener {
-            if (currentNumber > minNumber) {
-                currentNumber--
-                checkCount(currentNumber)
-            }
+            if (currentNumber > minNumber)
+                checkCount(--currentNumber)
         }
     }
 }
