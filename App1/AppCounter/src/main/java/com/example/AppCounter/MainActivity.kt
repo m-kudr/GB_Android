@@ -16,9 +16,9 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.textView.text = "Все места свободны"
+        binding.textView.text = getString(R.string.allFree)
         binding.buttonMinus.isEnabled = false
-        binding.count.text = "0"
+        binding.count.text = minNumber.toString()
         binding.buttonReset.visibility = View.INVISIBLE
 
         fun checkCount(count: Int) {
@@ -27,16 +27,17 @@ class MainActivity : AppCompatActivity() {
             if (count == minNumber) {
                 binding.buttonReset.visibility = View.INVISIBLE
                 binding.buttonMinus.isEnabled = false
-                binding.textView.text = "Все места свободны"
+                binding.textView.text = getString(R.string.allFree)
                 binding.textView.setTextColor(Color.rgb(0, 150, 136))
             } else {
                 if (count < maxNumber) {
                     binding.buttonMinus.isEnabled = true
-                    binding.textView.text = "Осталось мест: " + (maxNumber - count)
+                    binding.textView.text =
+                        getString(R.string.seatsLeft) + " " + (maxNumber - count)
                     binding.textView.setTextColor(Color.BLUE)
                 } else {
                     binding.buttonReset.visibility = View.VISIBLE
-                    binding.textView.text = "Пассажиров слишком много!"
+                    binding.textView.text = getString(R.string.tooMany)
                     binding.textView.setTextColor(Color.RED)
                 }
             }

@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">App1</string>
-    <string name="testText">Test Text String</string>
+    <string name="reset">СБРОС</string>
+    <string name="allFree">Все места свободны</string>
+    <string name="seatsLeft">Осталось мест:</string>
+    <string name="tooMany">Пассажиров слишком много!</string>
 </resources>
