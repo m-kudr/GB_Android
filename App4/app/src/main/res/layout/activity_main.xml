@@ -11,13 +11,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:scaleType="centerInside"
         android:src="@drawable/avatar_boy"
         app:layout_constraintBottom_toTopOf="@id/editName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_max="120dp"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintWidth_max="120dp" />
+        app:layout_constraintWidth_max="120dp"
+        android:contentDescription="@string/Avatar" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editName"
@@ -25,19 +27,31 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
         app:endIconMode="clear_text"
-        app:errorEnabled="true"
         app:layout_constraintBottom_toTopOf="@id/editPhone">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editNameText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Имя"
-            android:textSize="20dp" />
+            android:hint="@string/Name"
+            android:inputType="textAutoComplete"
+            android:textSize="20dp"
+            android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textViewNameInputCount"
+        style="@style/TextViewWrap16.Black"
+        android:layout_marginEnd="20dp"
+        android:text="@string/NameLenCount"
+        app:layout_constraintBottom_toTopOf="@id/editPhone"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editPhone"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
@@ -47,13 +61,15 @@
         app:layout_constraintBottom_toTopOf="@id/radioGroup">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editPhoneText"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#BB86FC"
-            android:hint="Телефон"
+            android:hint="@string/Phone"
             android:inputType="phone"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <RadioGroup
@@ -61,114 +77,96 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        app:layout_constraintBottom_toTopOf="@id/switch1">
+        app:layout_constraintBottom_toTopOf="@id/switchNotice">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Пол"
-            android:textSize="20dp" />
+            android:id="@+id/sex"
+            style="@style/TextViewWrap16.Black"
+            android:text="@string/Sex" />
 
         <RadioButton
-            android:id="@+id/radioButton1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="М"
-            android:textSize="20dp" />
+            android:id="@+id/radioButtonMan"
+            style="@style/TextViewWrap16.Black"
+            android:checked="false"
+            android:text="@string/Man" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ж"
-            android:textSize="20dp" />
+            android:id="@+id/radioButtonWoman"
+            style="@style/TextViewWrap16.Black"
+            android:text="@string/Woman" />
+
     </RadioGroup>
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/switchNotice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:text="Получать уведомления"
+        android:text="@string/GetNotify"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@id/checkBox1"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <CheckBox
         android:id="@+id/checkBox1"
+        style="@style/MyCheckBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:buttonTint="#03DAC5"
-        android:text="Об авторизации на устройстве"
-        android:textSize="20dp"
+        android:enabled="false"
+        android:text="@string/CheckBox1"
         app:layout_constraintBottom_toTopOf="@id/checkBox2" />
 
     <CheckBox
         android:id="@+id/checkBox2"
-        style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox"
+        style="@style/MyCheckBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:buttonTint="#03DAC5"
-        android:checked="true"
-        android:text="О новинках и предложениях"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@id/textView1" />
+        android:enabled="false"
+        android:text="@string/CheckBox2"
+        app:layout_constraintBottom_toTopOf="@id/skills" />
 
     <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:text="Баллы"
-        android:textColor="#000000"
-        android:textSize="16sp"
+        android:id="@+id/skills"
+        style="@style/TextViewWrap16.Black"
+        android:layout_marginStart="16dp"
+        android:text="@string/Skills"
         app:layout_constraintBottom_toTopOf="@id/progressBar"
         app:layout_constraintLeft_toLeftOf="@+id/progressBar"
-        app:layout_constraintRight_toLeftOf="@+id/textView2"
+        app:layout_constraintRight_toLeftOf="@+id/skillsCount"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/skillsCount"
+        style="@style/TextViewWrap16.Gray"
         android:layout_marginEnd="16dp"
-        android:text="44/100"
-        android:textColor="#444444"
-        android:textSize="16sp"
+        android:text="@string/SkillCount"
         app:layout_constraintBottom_toTopOf="@id/progressBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/textView1" />
+        app:layout_constraintLeft_toRightOf="@id/skills" />
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:progress="50"
-        android:tooltipText="Баллы"
+        android:tooltipText="@string/Skills"
         app:layout_constraintBottom_toTopOf="@id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="47dp" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="СОХРАНИТЬ"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/button"
+        style="@style/TextViewWrap16"
+        android:layout_width="match_parent"
+        android:layout_margin="16dp"
+        android:enabled="true"
+        android:text="@string/Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

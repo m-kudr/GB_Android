@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">App4</string>
+    <string name="Name">Имя</string>
+    <string name="Phone">Телефон</string>
+    <string name="GetNotify">Получать уведомления</string>
+    <string name="Man">М</string>
+    <string name="Woman">Ж</string>
+    <string name="CheckBox1">Об авторизации на устройстве</string>
+    <string name="CheckBox2">О новинках и предложениях</string>
+    <string name="Skills">Баллы</string>
+    <string name="Save">СОХРАНИТЬ</string>
+    <string name="SkillCount">0/100</string>
+    <string name="Avatar">Аватар</string>
+    <string name="NameLenCount">0/40</string>
+    <string name="Sex">Пол</string>
+    <string name="TooLongName">Слишком длинное имя!</string>
+    <string name="SaveSuccess">Сохранено успешно!</string>
+    <string name="WrongProfileData">Неправильно заполнен профиль!</string>
 </resources>
