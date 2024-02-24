@@ -15,5 +15,4 @@
     <string name="Sex">Пол</string>
     <string name="TooLongName">Слишком длинное имя!</string>
     <string name="SaveSuccess">Сохранено успешно!</string>
-    <string name="WrongProfileData">Неправильно заполнен профиль!</string>
 </resources>

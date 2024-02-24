@@ -3,9 +3,7 @@ package com.example.app4
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
-import androidx.core.view.marginBottom
 import androidx.core.widget.doOnTextChanged
 import com.example.app4.databinding.ActivityMainBinding
 import kotlin.random.Random
@@ -50,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.editNameText.doOnTextChanged { text, _, _, _ ->
             if (text != null) {
-                val len = text.length
+                val len: Int = text.length
                 binding.textViewNameInputCount.text = "${len}/${MAX_NAME_LENGTH}"
                 if (len in 0..MAX_NAME_LENGTH) {
                     binding.textViewNameInputCount.setTextColor(Color.BLACK)
@@ -63,14 +61,31 @@ class MainActivity : AppCompatActivity() {
                     binding.editName.isErrorEnabled = true
                 }
             }
+            binding.button.isEnabled = isValidInput()
+        }
+
+        binding.editPhoneText.doOnTextChanged { _, _, _, _ ->
+            binding.button.isEnabled = isValidInput()
+        }
+
+        binding.radioGroup.setOnCheckedChangeListener { _, _ ->
+            binding.button.isEnabled = isValidInput()
+        }
+
+        binding.switchNotice.setOnCheckedChangeListener { _, _ ->
+            binding.button.isEnabled = isValidInput()
+        }
+
+        binding.checkBox1.setOnCheckedChangeListener { _, _ ->
+            binding.button.isEnabled = isValidInput()
+        }
+
+        binding.checkBox2.setOnCheckedChangeListener { _, _ ->
+            binding.button.isEnabled = isValidInput()
         }
 
         binding.button.setOnClickListener {
-            if (isValidInput())
-                Toast.makeText(this, getString(R.string.SaveSuccess), Toast.LENGTH_SHORT).show()
-            else
-                Toast.makeText(this, getString(R.string.WrongProfileData), Toast.LENGTH_SHORT)
-                    .show()
+            Toast.makeText(this, getString(R.string.SaveSuccess), Toast.LENGTH_SHORT).show()
         }
     }
 }

@@ -1,172 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:scaleType="centerInside"
-        android:src="@drawable/avatar_boy"
-        app:layout_constraintBottom_toTopOf="@id/editName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_max="120dp"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintWidth_max="120dp"
-        android:contentDescription="@string/Avatar" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editName"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-        app:endIconMode="clear_text"
-        app:layout_constraintBottom_toTopOf="@id/editPhone">
+        tools:context=".MainActivity">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editNameText"
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/Avatar"
+            android:scaleType="centerInside"
+            android:src="@drawable/avatar_boy"
+            app:layout_constraintBottom_toTopOf="@id/editName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_max="120dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_max="120dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/Name"
-            android:inputType="textAutoComplete"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintBottom_toTopOf="@id/editPhone">
 
-    <TextView
-        android:id="@+id/textViewNameInputCount"
-        style="@style/TextViewWrap16.Black"
-        android:layout_marginEnd="20dp"
-        android:text="@string/NameLenCount"
-        app:layout_constraintBottom_toTopOf="@id/editPhone"
-        app:layout_constraintRight_toRightOf="parent" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editNameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/Name"
+                android:inputType="textAutoComplete"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editPhone"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        app:endIconMode="clear_text"
-        app:layout_constraintBottom_toTopOf="@id/radioGroup">
+        <TextView
+            android:id="@+id/textViewNameInputCount"
+            style="@style/TextViewWrap16.Black"
+            android:layout_marginEnd="20dp"
+            android:text="@string/NameLenCount"
+            app:layout_constraintBottom_toTopOf="@id/editPhone"
+            app:layout_constraintRight_toRightOf="parent" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editPhoneText"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editPhone"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#BB86FC"
-            android:hint="@string/Phone"
-            android:inputType="phone"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_margin="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintBottom_toTopOf="@id/radioGroup">
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        app:layout_constraintBottom_toTopOf="@id/switchNotice">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editPhoneText"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#BB86FC"
+                android:hint="@string/Phone"
+                android:inputType="phone"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:layout_constraintBottom_toTopOf="@id/switchNotice">
+
+            <TextView
+                android:id="@+id/sex"
+                style="@style/TextViewWrap16.Black"
+                android:text="@string/Sex" />
+
+            <RadioButton
+                android:id="@+id/radioButtonMan"
+                style="@style/TextViewWrap16.Black"
+                android:checked="false"
+                android:text="@string/Man" />
+
+            <RadioButton
+                android:id="@+id/radioButtonWoman"
+                style="@style/TextViewWrap16.Black"
+                android:text="@string/Woman" />
+
+        </RadioGroup>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchNotice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="@string/GetNotify"
+            app:layout_constraintBottom_toTopOf="@id/checkBox1" />
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            style="@style/MyCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="@string/CheckBox1"
+            app:layout_constraintBottom_toTopOf="@id/checkBox2" />
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            style="@style/MyCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="@string/CheckBox2"
+            app:layout_constraintBottom_toTopOf="@id/scores" />
 
         <TextView
-            android:id="@+id/sex"
+            android:id="@+id/scores"
             style="@style/TextViewWrap16.Black"
-            android:text="@string/Sex" />
+            android:layout_marginStart="16dp"
+            android:text="@string/Skills"
+            app:layout_constraintBottom_toTopOf="@id/progressBar"
+            app:layout_constraintLeft_toLeftOf="@+id/progressBar"
+            app:layout_constraintRight_toLeftOf="@+id/skillsCount"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <RadioButton
-            android:id="@+id/radioButtonMan"
-            style="@style/TextViewWrap16.Black"
-            android:checked="false"
-            android:text="@string/Man" />
+        <TextView
+            android:id="@+id/skillsCount"
+            style="@style/TextViewWrap16.Gray"
+            android:layout_marginEnd="16dp"
+            android:text="@string/SkillCount"
+            app:layout_constraintBottom_toTopOf="@id/progressBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/scores" />
 
-        <RadioButton
-            android:id="@+id/radioButtonWoman"
-            style="@style/TextViewWrap16.Black"
-            android:text="@string/Woman" />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:progress="50"
+            android:tooltipText="@string/Skills"
+            app:layout_constraintBottom_toTopOf="@id/button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    </RadioGroup>
+        <Button
+            android:id="@+id/button"
+            style="@style/TextViewWrap16"
+            android:layout_width="0dp"
+            android:layout_margin="16dp"
+            android:enabled="false"
+            android:padding="16dp"
+            android:text="@string/Save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <Switch
-        android:id="@+id/switchNotice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:text="@string/GetNotify"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@id/checkBox1"
-        tools:ignore="UseSwitchCompatOrMaterialXml" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <CheckBox
-        android:id="@+id/checkBox1"
-        style="@style/MyCheckBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:enabled="false"
-        android:text="@string/CheckBox1"
-        app:layout_constraintBottom_toTopOf="@id/checkBox2" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        style="@style/MyCheckBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:enabled="false"
-        android:text="@string/CheckBox2"
-        app:layout_constraintBottom_toTopOf="@id/skills" />
-
-    <TextView
-        android:id="@+id/skills"
-        style="@style/TextViewWrap16.Black"
-        android:layout_marginStart="16dp"
-        android:text="@string/Skills"
-        app:layout_constraintBottom_toTopOf="@id/progressBar"
-        app:layout_constraintLeft_toLeftOf="@+id/progressBar"
-        app:layout_constraintRight_toLeftOf="@+id/skillsCount"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/skillsCount"
-        style="@style/TextViewWrap16.Gray"
-        android:layout_marginEnd="16dp"
-        android:text="@string/SkillCount"
-        app:layout_constraintBottom_toTopOf="@id/progressBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/skills" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:progress="50"
-        android:tooltipText="@string/Skills"
-        app:layout_constraintBottom_toTopOf="@id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button"
-        style="@style/TextViewWrap16"
-        android:layout_width="match_parent"
-        android:layout_margin="16dp"
-        android:enabled="true"
-        android:text="@string/Save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
