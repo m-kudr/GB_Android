@@ -11,7 +11,7 @@ android {
     defaultConfig {
         applicationId = "com.example.easyquiz"
         minSdk = 24
-        targetSdk = 29
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 

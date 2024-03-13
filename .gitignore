@@ -15,7 +15,7 @@ local.properties
 
 # User-specific configurations
 .idea/libraries/
-.idea/*.*
+/*/.idea/
 
 # OS-specific files
 .DS_Store
