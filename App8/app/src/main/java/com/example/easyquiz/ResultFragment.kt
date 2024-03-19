@@ -1,6 +1,10 @@
 package com.example.easyquiz
 
+import android.animation.AnimatorInflater
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -27,7 +31,25 @@ class ResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        ObjectAnimator.ofArgb(
+            binding.resultTitle,
+            "textColor",
+            Color.BLACK,
+            Color.parseColor("#DF403E")
+        ).apply {
+            duration = 1000
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
         binding.result.text = args.number.toString() + "/3"
+        (AnimatorInflater.loadAnimator(
+            this.context,
+            R.animator.custom_multianimation
+        ) as AnimatorSet).apply {
+            setTarget(binding.result)
+            start()
+        }
 
         binding.button.setOnClickListener {
             findNavController().navigate(R.id.action_resultFragment_to_quizFragment)
