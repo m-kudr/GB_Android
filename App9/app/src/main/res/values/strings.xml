@@ -25,4 +25,8 @@
     <string name="answer_to_3_3">Hint</string>
     <string name="answer_to_3_4">Alert</string>
     <string name="answer_to_3_5">+Toast</string>
+
+    <string name="enter_birthday">Ввести дату рождения</string>
+    <string name="birthday_title">Выберите свою дату рождения</string>
+
 </resources>
