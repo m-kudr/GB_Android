@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">App15</string>
+    <string name="text_notify">Notify</string>
+    <string name="edit_text">Введите слова</string>
+    <string name="save">ЗАПИСАТЬ</string>
+    <string name="clear_all">ОЧИСТИТЬ</string>
+    <string name="error_text">В слове использвать только русские буквы и дефис</string>
+</resources>
