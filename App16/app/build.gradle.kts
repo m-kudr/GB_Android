@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -39,6 +42,20 @@ android {
 }
 
 dependencies {
+
+    implementation("com.google.dagger:hilt-android:2.38.1")
+    kapt("com.google.dagger:hilt-compiler:2.38.1")
+    implementation(libs.retrofit)
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+
+    implementation(libs.viewmodel)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.retrofit)
+    implementation(libs.moshi)
+    implementation(libs.gson)
+    implementation(libs.converter.gson)
+    annotationProcessor("com.google.dagger:dagger-compiler:2.51")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
