@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">App17</string>
+    <string name="app_name">app17</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Fragment 1</string>
+    <string name="second_fragment_label">Fragment 2</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello fragment 1</string>
+    <string name="hello_second_fragment">Hello fragment 2. Arg: %1$s</string>
 </resources>
